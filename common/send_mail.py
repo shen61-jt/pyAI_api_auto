@@ -9,6 +9,7 @@ def send_mail(attachments):
     """
     # user：发件人邮箱，password：发件人qq邮箱授权码，host：qq的服务器域名。
     mail_config = {"host": MAIL['host'],
+                   'port': 465,           # 确认端口号(587/465/25)
                    "user": MAIL['send_user'],
                    "password": MAIL['password']
                    }

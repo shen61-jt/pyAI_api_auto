@@ -37,7 +37,7 @@ if __name__ == '__main__':
     # 报告的压缩包reports/report.zip
     report_path = os.path.join(r"reports", "report.zip")
     # 调用方法，发送报告的压缩包reports/report.zip测试报告到QQ邮箱
-    # send_mail(report_path)
+    send_mail(report_path)
     logger.info("接口自动化测试完成！")
     # 启动allure服务，自动打开报告
     os.system(r'allure serve reports/temps')
