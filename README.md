@@ -5,8 +5,7 @@
 
 python的版本需要3.10+
 
-项目地址：http://mall.lemonban.com:3344
-账号：lemon_auto/lemon123456
+
 
 **1、接口关联。**
 
@@ -39,10 +38,8 @@ python的版本需要3.10+
     requiremens.txt:框架所需的第三方库。
     run.py：框架运行入口。
 
-testcases中写了几个案例：
 
-    erp项目。
-    shop电商项目。
+
 
 **3、持续集成文件。**
 
