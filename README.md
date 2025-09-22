@@ -25,6 +25,7 @@ python的版本需要3.10+
 
 各目录含义：
 
+    AI_result：保存响应结果。
     common：工具类。
     data：接口数据。
     config：配置文件。
