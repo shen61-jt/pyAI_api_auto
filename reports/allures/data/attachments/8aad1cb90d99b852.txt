@@ -1,1 +1,0 @@
-{"code":0,"message":"成功","data":{"minicourseId":"","mainTitle":"","subTitle":"","imageUrl":"","grade":"","tags":"","subject":"","price":0,"currentPrice":0,"description":"","period":0}}

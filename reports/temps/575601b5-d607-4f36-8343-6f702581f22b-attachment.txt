@@ -1,1 +1,0 @@
-{"encryptedData": "encrypted_data", "iv": "initial_vector", "sessionId": "invalid_session_id"}

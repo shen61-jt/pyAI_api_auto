@@ -1,1 +1,0 @@
-{'file':('datas/test.png',open('datas/test.png',mode='rb'),'images/png')}

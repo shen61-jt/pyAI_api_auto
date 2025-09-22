@@ -1,1 +1,0 @@
-{"minicourseId": "course123", "amount": 99.99, "subject": "课程购买"}

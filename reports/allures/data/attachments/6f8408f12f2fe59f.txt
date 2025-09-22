@@ -1,1 +1,0 @@
-{"member_id": 6, "amount": 10000.0, "timestamp": 1758523042, "sign": "eUL4HYTgjD/xjs8ylmkQ3OgGTFhL5bfdMdfGeNE+vT+kamzDDbAdK8YM22IrtqOjVvxb7sh2Ksaffc781vYJBTzh/8WiQmPDQ6CbruQ+SxfswwLm4NaKm1ieF+lb1y/bmlIyN6ffCqvllvQnnaQo10Wz/rNwdnZQhuZDzK+Iee8="}

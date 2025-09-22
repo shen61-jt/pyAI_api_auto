@@ -1,1 +1,0 @@
-{"code":0,"msg":"OK","data":{"id":6,"leave_amount":2.483305873E7,"mobile_phone":"13323231111","reg_name":"黑长直6","reg_time":"2023-02-14 13:34:46.0","type":1},"copyright":"Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved"}

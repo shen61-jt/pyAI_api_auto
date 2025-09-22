@@ -1,1 +1,0 @@
-{"minicourseId": "course123", "amount": 0, "subject": "课程购买"}
