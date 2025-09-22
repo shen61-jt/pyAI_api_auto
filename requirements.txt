@@ -1,0 +1,12 @@
+openpyxl
+requests
+pytest
+allure_python_commons
+allure-pytest
+loguru
+jsonpath
+faker
+pymysql
+pycryptodome
+python-jenkins
+yagmail

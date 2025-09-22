@@ -1,0 +1,1 @@
+{"principal": "lemon_autox", "credentials": "lemon123456", "appType": 3, "loginType": 0}
