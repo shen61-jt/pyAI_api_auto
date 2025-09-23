@@ -1,1 +1,0 @@
-{"token":null,"status":1,"nickName":"lemon_auto","sex":null,"userMobile":"13323234444","mobile":"133****4444","pic":"http://shop.lemonban.com:8108/2025/09/03867f15346e4cb684d5db6054ba896a.png","birthDate":null,"level":1,"levelType":0,"growth":0,"score":10000,"balance":0.0}

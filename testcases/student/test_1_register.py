@@ -30,9 +30,3 @@ def test_register(case):
     extract_res(case, res)
     assert_res(case, res)
     assert_db(case)
-    # 要求：在第一条接口请求结束之后查询数据库
-    # if case['用例编号'] == 1:
-    #     sql = f"select mobile_code from tz_sms_log where user_phone='{phone}' order by rec_date desc limit 1"
-    #     code = query_db(sql, 'one')[0]
-    #     # 将数据保存到数据容器中，给后续的接口使用
-    #     dic_env['code'] = code
