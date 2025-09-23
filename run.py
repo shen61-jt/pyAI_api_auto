@@ -18,13 +18,25 @@ logger.add(sink=log_path, encoding="utf-8", level="INFO", rotation="10MB", reten
 logger.add(sys.stdout, level="INFO")
 
 if __name__ == '__main__':
-    pytest.main()
+    # 使用pytest.ini中的配置运行测试
+    pytest.main(['-c', 'pytest.ini'])
+    
     # 复制environment.xml环境设置到allure报告
     shutil.copy('./environment.xml', './reports/temps')
     # 等待3s
     time.sleep(3)
-    # 将report/temps文件夹下临时生成的json格式的测试报告，-o：输出到report/allures目录下生成index.html报告
-    os.system(r"allure generate reports/temps -o reports/allures --clean")
+    
+    # 检查测试结果文件是否存在
+    if os.path.exists('./reports/temps') and os.listdir('./reports/temps'):
+        # 将report/temps文件夹下临时生成的json格式的测试报告，-o：输出到report/allures目录下生成index.html报告
+        os.system(r"allure generate reports/temps -o reports/allures --clean")
+        logger.info("Allure报告生成成功")
+    else:
+        logger.warning("未找到测试结果文件，生成空的Allure报告")
+        # 创建空的allure报告目录结构
+        os.makedirs('./reports/allures', exist_ok=True)
+        os.system(r"allure generate reports/temps -o reports/allures --clean")
+    
     # 复制allure报告打开.bat文件到reports/allures下
     shutil.copy(r'reports/allure报告打开.bat', r'reports/allures')
     # 自定义allure报告网页标题
@@ -39,5 +51,6 @@ if __name__ == '__main__':
     # 调用方法，发送报告的压缩包reports/report.zip测试报告到QQ邮箱
     send_mail(report_path)
     logger.info("接口自动化测试完成！")
-    # 启动allure服务，自动打开报告
-    os.system(r'allure serve reports/temps')
+    # 启动allure服务，自动打开报告（仅在本地环境）
+    if not os.getenv('GITHUB_ACTIONS'):
+        os.system(r'allure serve reports/temps')
