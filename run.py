@@ -40,4 +40,4 @@ if __name__ == '__main__':
     send_mail(report_path)
     logger.info("接口自动化测试完成！")
     # 启动allure服务，自动打开报告
-    # os.system(r'allure serve reports/temps')
+    os.system(r'allure serve reports/temps')
