@@ -1,0 +1,5 @@
+# Created by pytest automatically.
+# 忽略日志文件
+logs/
+*.log
+
