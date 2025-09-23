@@ -25,10 +25,13 @@ dic_env['mobile_phone'] = phone
 @allure.description("描述：所有测试模块")
 @allure.link(url="https://minicourse.test.venhalo.com", name="接口地址")
 @allure.severity(allure.severity_level.BLOCKER)
-@pytest.mark.skipif(IS_CI_ENV, reason="在CI环境中跳过需要数据库连接的测试")
 @pytest.mark.parametrize('case', case_datas)
 def test_register(case):
     res = send_request(case)
     extract_res(case, res)
     assert_res(case, res)
-    assert_db(case)
+    # 只在非CI环境中执行数据库断言
+    if not IS_CI_ENV:
+        assert_db(case)
+    save_response_to_excel(case, res)
+
