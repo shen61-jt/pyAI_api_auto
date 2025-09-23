@@ -34,7 +34,7 @@ jobs:
         python run.py
       env:
         # 在CI环境中禁用邮件发送功能
-        DISABLE_EMAIL: true
+        # DISABLE_EMAIL: true
         # 标记为GitHub Actions环境
         GITHUB_ACTIONS: true
 
