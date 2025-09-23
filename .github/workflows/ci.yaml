@@ -9,17 +9,14 @@ on:
 jobs:
   test-and-run:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.9, '3.10', '3.11', '3.12']
-
+    # 移除矩阵策略，只使用单个Python版本
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.12
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.11
 
     - name: Install dependencies
       run: |
@@ -43,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: test-results-${{ matrix.python-version }}
+        name: test-results
         path: |
           reports/
           !reports/temps
@@ -52,7 +49,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: allure-report-${{ matrix.python-version }}
+        name: allure-report
         path: reports/allures/
         
     - name: Run linting
