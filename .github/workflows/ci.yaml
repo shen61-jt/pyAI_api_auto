@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-run:
+    runs-on: ubuntu-latest
+    # 移除矩阵策略，只使用单个Python版本
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.12
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        # 安装allure命令行工具
+        sudo apt-get update
+        sudo apt-get install -y default-jre
+        wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
+        sudo tar -zxvf allure-2.23.1.tgz -C /opt/
+        sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+
+    - name: Run main script
+      run: |
+        python run.py
+      env:
+        # 在CI环境中禁用邮件发送功能
+        DISABLE_EMAIL: true
+
+    - name: Archive test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results
+        path: |
+          reports/
+          !reports/temps
+        
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: allure-report
+        path: reports/allures/
+        
+    - name: Run linting
+      run: |
+        pip install flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
