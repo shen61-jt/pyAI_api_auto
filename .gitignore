@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+logs/
+*.log
+
+# Test reports
+reports/temps/
+reports/allures/
+reports/report.zip
+reports/result.txt
+
+# IDE
+.idea/
+*.iml
+
+# Environment
+.env
+
+# Cache
+*.cache
