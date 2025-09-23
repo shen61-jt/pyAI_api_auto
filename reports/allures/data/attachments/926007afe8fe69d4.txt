@@ -1,0 +1,6 @@
+{
+    "userId": "${studentId}",
+    "name": "更新test学生",
+    "grade": "2",
+    "gender": "0"
+}

@@ -1,0 +1,1 @@
+{"member_id": ${id}, "amount": 10000.0, "timestamp": 1758533416, "sign": "${sign}"}
