@@ -1,0 +1,6 @@
+{
+    "userId": "0286f764-bdf8-46bf-a0f1-91101b799d80",
+    "name": "更新test学生",
+    "grade": "2",
+    "gender": "0"
+}

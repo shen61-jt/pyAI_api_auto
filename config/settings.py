@@ -1,9 +1,12 @@
+import os
 from pathlib import Path
 
 # excel文件的路径
 excel_path = Path(__file__).parent.parent / 'datas' / 'data.xlsx'
 # 日志文件的路径
 log_path = Path(__file__).parent.parent / 'logs' / 'api_auto.log'
+# 检查是否在CI环境中
+IS_CI_ENV = os.environ.get('CI', '').lower() == 'true' or os.environ.get('GITHUB_ACTIONS', '').lower() == 'true'
 
 # 数据库的配置信息
 MQ_CONFIG = {

@@ -1,5 +1,6 @@
 import allure
 import pytest
+from config.settings import IS_CI_ENV
 from common.base_test import read_excel
 from common.base_test import assert_res
 from common.base_test import assert_db
@@ -30,5 +31,8 @@ def test_register(case):
     res = send_request(case)
     extract_res(case, res)
     assert_res(case, res)
-    assert_db(case)
+    # 只在非CI环境中执行数据库断言
+    if not IS_CI_ENV:
+        assert_db(case)
+    save_response_to_excel(case, res)
     save_response_to_excel(case, res)
