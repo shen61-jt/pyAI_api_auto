@@ -29,12 +29,33 @@ jobs:
         sudo tar -zxvf allure-2.23.1.tgz -C /opt/
         sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
 
-    - name: Run main script
+    - name: Run tests and generate report
       run: |
         python run.py
       env:
         # 在CI环境中禁用邮件发送功能
         DISABLE_EMAIL: true
+        # 标记为GitHub Actions环境
+        GITHUB_ACTIONS: true
+
+    - name: Check test results
+      run: |
+        echo "检查测试结果文件..."
+        ls -la reports/
+        echo "检查临时测试结果..."
+        if [ -d "reports/temps" ]; then
+          echo "临时测试结果文件数量: $(ls -1 reports/temps | wc -l)"
+          ls -la reports/temps/
+        else
+          echo "未找到临时测试结果目录"
+        fi
+        echo "检查生成的Allure报告..."
+        if [ -d "reports/allures" ]; then
+          echo "Allure报告文件数量: $(ls -1 reports/allures | wc -l)"
+          ls -la reports/allures/
+        else
+          echo "未找到Allure报告目录"
+        fi
 
     - name: Archive test results
       uses: actions/upload-artifact@v4
