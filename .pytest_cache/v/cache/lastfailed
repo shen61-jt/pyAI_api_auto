@@ -74,17 +74,5 @@
   "testcases/parent/test_2_all_parent.py::test_register[case46]": true,
   "testcases/parent/test_2_all_parent.py::test_register[case47]": true,
   "testcases/parent/test_2_all_parent.py::test_register[case48]": true,
-  "testcases/parent/test_2_all_parent.py::test_register[case49]": true,
-  "testcases/parent/test_2_all_parent.py::test_register[case50]": true,
-  "testcases/parent/test_2_all_parent.py::test_register[case51]": true,
-  "testcases/parent/test_2_all_parent.py::test_register[case52]": true,
-  "testcases/parent/test_2_all_parent.py::test_register[case53]": true,
-  "testcases/student/test_1_register.py::test_register[case0]": true,
-  "testcases/student/test_1_register.py::test_register[case1]": true,
-  "testcases/student/test_1_register.py::test_register[case2]": true,
-  "testcases/student/test_1_register.py::test_register[case3]": true,
-  "testcases/student/test_1_register.py::test_register[case4]": true,
-  "testcases/student/test_1_register.py::test_register[case5]": true,
-  "testcases/student/test_1_register.py::test_register[case6]": true,
-  "testcases/student/test_1_register.py::test_register[case7]": true
+  "testcases/parent/test_2_all_parent.py::test_register[case49]": true
 }
