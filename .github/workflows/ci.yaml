@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     # 移除矩阵策略，只使用单个Python版本
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Python 3.12
       uses: actions/setup-python@v4
@@ -63,7 +63,7 @@ jobs:
       with:
         name: test-report
         path: reports/allures/
-        
+
     - name: Run linting
       run: |
         pip install flake8
