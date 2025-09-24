@@ -4,10 +4,12 @@ import sys
 import time
 import pytest
 from loguru import logger
-from common.send_mail import send_mail
+# from common.send_mail import send_mail
+from common.dingding_robot import send_ding
 from config.settings import log_path
 from common.allure_reports import set_windows_title, get_json_data, write_json_data
 from common.zip_files import zip_reports
+from common.zip_files import read_test_result
 
 # 移除默认的日志处理器
 logger.remove()
@@ -49,7 +51,13 @@ if __name__ == '__main__':
     # 报告的压缩包reports/report.zip
     report_path = os.path.join(r"reports", "report.zip")
     # 调用方法，发送报告的压缩包reports/report.zip测试报告到QQ邮箱
-    send_mail(report_path)
+    # send_mail(report_path)
+    # 在 run.py 中添加读取测试结果并发送的代码
+
+    read_test_result()
+    # 发送到钉钉
+    test_result = read_test_result()
+    send_ding(f"测试结果:\n{test_result}", at_all=True)
     logger.info("接口自动化测试完成！")
     # 启动allure服务，自动打开报告（仅在本地环境）
     if not os.getenv('GITHUB_ACTIONS'):

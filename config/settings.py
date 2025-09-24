@@ -32,8 +32,8 @@ project_name = 'pyAI_api_auto'
 
 # # 钉钉通知配置
 DINGDING = {
-    'secret': 'SECdfb951a25ae2485648320d82a83e64095916556f0e4e2ab03e268f919c9177a1',
-    'url': 'https://oapi.dingtalk.com/robot/send?access_token=f8438068a6a6e4c98f6476b90340357fa6aafd32d93e70c67112dd8c5bd9c5d7'
+    'secret': 'SEC5ba3a6f2dae7cdc1529af0ecbbe420f480b020c917caa23817387e32bbe095b6',
+    'url': 'https://oapi.dingtalk.com/robot/send?access_token=fc46690c1c360a53ee53b3c1b9995027fcb18efefc891692f5824df7ba801fe7'
 }
 
 # # 企业微信通知配置
@@ -50,3 +50,14 @@ MAIL = {
     'cc_user': '2879205362@qq.com',
     'bcc_user': None
 }
+
+import os
+from pathlib import Path
+
+# excel文件的路径
+excel_path = Path(__file__).parent.parent / 'datas' / 'data.xlsx'
+# 日志文件的路径
+log_path = Path(__file__).parent.parent / 'logs' / 'api_auto.log'
+# 检查是否在CI环境中
+IS_CI_ENV = os.environ.get('CI', '').lower() == 'true' or os.environ.get('GITHUB_ACTIONS', '').lower() == 'true'
+
