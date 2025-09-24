@@ -33,5 +33,4 @@ def test_register(case):
     # 只在非CI环境中执行数据库断言
     if not IS_CI_ENV:
         assert_db(case)
-    save_response_to_excel(case, res)
 

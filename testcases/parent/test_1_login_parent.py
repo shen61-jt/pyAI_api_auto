@@ -7,7 +7,7 @@ from common.base_test import assert_db
 from common.base_test import send_request
 from common.base_test import extract_res
 from common.base_test import dic_env
-from common.base_test import save_response_to_excel
+# from common.base_test import save_response_to_excel
 from config.settings import excel_path
 from common.handle_data import get_unregister_phone
 # from common.handle_data import get_unregister_username
@@ -34,5 +34,3 @@ def test_register(case):
     # 只在非CI环境中执行数据库断言
     if not IS_CI_ENV:
         assert_db(case)
-    save_response_to_excel(case, res)
-    save_response_to_excel(case, res)
