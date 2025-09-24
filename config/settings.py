@@ -45,7 +45,7 @@ DINGDING = {
 MAIL = {
     'host': 'smtp.qq.com',
     'send_user': '527005944@qq.com',
-    'password': 'plxotdienevsbhbc',
+    'password': 'dqmtjasisbnbbgbc',
     'receive_user': '527005944@qq.com',
     'cc_user': '2879205362@qq.com',
     'bcc_user': None
