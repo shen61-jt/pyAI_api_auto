@@ -61,16 +61,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: test-results
-        path: |
-          reports/
-          !reports/temps
-        
-    - name: Upload Allure Report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: allure-report
+        name: test-report
         path: reports/allures/
         
     - name: Run linting
