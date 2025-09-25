@@ -24,7 +24,7 @@ dic_env['mobile_phone'] = phone
 @allure.epic('AI家长端项目')
 @allure.feature('登录模块')
 @allure.description("描述：登录测试模块")
-@allure.link(url="https://minicourse.test.venhalo.com", name="接口地址")
+@allure.link(url="https://s.apifox.cn/b645e0cc-cfd2-4e6a-a572-cf4507f29dbe", name="接口地址")
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('case', case_datas)
 def test_register(case):
